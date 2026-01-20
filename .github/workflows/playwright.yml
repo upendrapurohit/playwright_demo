@@ -24,8 +24,13 @@ jobs:
     # 3️⃣ Create folders for reports
     - name: Create report directories
       run: |
-        if not exist reports mkdir reports
-        if not exist allure-results mkdir allure-results
+        if (!(Test-Path "reports")) {
+          New-Item -ItemType Directory -Name "reports"
+        }
+        if (!(Test-Path "allure-results")) {
+          New-Item -ItemType Directory -Name "allure-results"
+        }
+
 
     # 4️⃣ Install dependencies
     - name: Install dependencies
