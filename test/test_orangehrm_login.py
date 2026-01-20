@@ -1,7 +1,9 @@
 import re
+
 from playwright.sync_api import Page, expect
-from pages.orangehrm_login import loginpage
+
 from pages.orangehrm_home import homepage
+from pages.orangehrm_login import loginpage
 
 
 def test_orangehrm_login(page: Page) -> None:
