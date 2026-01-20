@@ -16,4 +16,6 @@ def test_orangehrm_login(page: Page) -> None:
     home_page = homepage(page)
 
     # Verify successful login by checking for the presence of the dashboard heading
-    expect(home_page.dashboard_heading).to_have_text(re.compile("Dashboard", re.IGNORECASE))
+    expect(home_page.dashboard_heading).to_have_text(
+        re.compile("Dashboard", re.IGNORECASE)
+    )

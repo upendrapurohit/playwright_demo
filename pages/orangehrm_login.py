@@ -1,5 +1,6 @@
 from playwright.sync_api import Page
 
+
 class loginpage:
     def __init__(self, page: Page):
         self.page = page
@@ -8,7 +9,9 @@ class loginpage:
         self.login_button = page.get_by_role("button", name="Login")
 
     def navigate(self):
-        self.page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+        self.page.goto(
+            "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+        )
 
     def login(self, username: str, password: str):
         self.username_input.fill(username)
